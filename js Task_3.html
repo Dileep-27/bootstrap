@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #frst,#secd{
+            margin: 3px;
+        }
+        #multi:hover,#div:hover{
+            border: 1px solid rgb(66, 208, 255);
+        }
+        .center{
+            position: absolute;
+            border: 3px solid;
+            padding: 10px;
+        }
+        body{
+            display: flex;
+            height: 10vh;
+            margin: 1px;
+        }
+    </style>
+    <script>
+        function multi(){
+            var frst = parseFloat(document.getElementById("frst").value);
+            var secd = parseFloat(document.getElementById("secd").value);
+            var result = frst * secd;
+            document.getElementById("Result").innerText = "The Result is: " + result;
+        }
+        function divi(){
+            var frst = parseFloat(document.getElementById("frst").value);
+            var secd = parseFloat(document.getElementById("secd").value);
+            var resultDiv = document.getElementById("Result");
+            if (secd === 0) {
+                resultDiv.innerText = "Cannot divide by zero.";
+            } else {
+                var result = frst / secd;
+                resultDiv.innerText = "Result : "+ result;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="center">
+        1 st number:
+        <input type="text" id="frst"><br>
+        2nd number:
+        <input type="text" id="secd"><br>
+        <button onclick="multi()" id="mul">Multiply</button>
+        <button onclick="divi()" id="div">Division</button><br><br>
+        <div id="Result"></div>
+    </div>
+</body>
+</html>

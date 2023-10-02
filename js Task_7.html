@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <script>
+      var img = null;
+      var intervalID = null;
+      var isMoving = false;
+      function init() {
+         img = document.getElementById('myimg');
+         img.style.position = 'relative';
+         img.style.left = '5px';
+      }
+      function startMoving() {
+         if (!isMoving) {
+            intervalID = setInterval(moveRight, 100);
+            isMoving = true;
+         }
+      }
+      function stopMoving() {
+         if (isMoving) {
+            clearInterval(intervalID);
+            isMoving = false;
+         }
+      }
+      function moveRight() {
+         img.style.left = parseInt(img.style.left) + 10 + 'px';
+      }
+      window.onload = init;
+   </script>
+</head>
+<body>
+   <form style="margin-top: 10%; margin-left:30%">
+      <img id="myimg" src="image1.jpeg" />
+         <p>Click the following buttons to handle the animation</p>
+         <div style="margin-left:10%">
+         <input type="button" value="Start" onclick="startMoving();" />
+         <input type="button" value="Stop" onclick="stopMoving();" />
+      </div>
+   </form>
+</body>
+</html>

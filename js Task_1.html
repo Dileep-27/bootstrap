@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h2>js_Task_1</h2>
+<h3>Reverse the number</h3>
+<script>
+    function rev() {
+        var num = parseInt(document.getElementById("no").value);
+        var rev = 0;
+        
+        while (num !== 0) {
+            rev = rev * 10 + num % 10;
+            num = Math.floor(num / 10);
+        }  
+        document.write("Reversed Number: " + rev);
+    }
+</script>
+<body>
+    Enter the number:
+    <input type="text" id="no">
+    <button onclick="rev()">Submit</button>
+</body>
+</html>
